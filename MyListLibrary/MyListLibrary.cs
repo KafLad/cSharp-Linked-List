@@ -8,7 +8,7 @@ namespace MyListLibrary
     public class MyList<T> : IEnumerable<T> where T: IComparable
     {
 
-        private class Node<T>
+        private class Node<T> // Node class used within the linked list that allows for storage of data.
         {
             public T data;
             public Node<T> next;
@@ -34,14 +34,14 @@ namespace MyListLibrary
         private int count;
         public int Count => count;
 
-        public MyList()
+        public MyList() // Default Constructor
         {
             head = null;
             tail = null;
             count = 0;
         }
 
-        public MyList(T[] arr)
+        public MyList(T[] arr) // Constructor with pre-made array
         {
             foreach(T item in arr)
             {
@@ -49,8 +49,9 @@ namespace MyListLibrary
             }
         }
 
-        public void Add(T item)
+        public void Add(T item) 
         {
+            // Function that adds an item to the end of the linked list
             if(head == null)
             {
             head = new Node<T>(item, null);
@@ -67,6 +68,7 @@ namespace MyListLibrary
 
         public int IndexOf(T item, int startAt = 0)
         {
+            // Function that finds where a particular item is located inside the linked list. If it does not exist, will return -1.
             int idx = startAt;
             Node<T> curr = WalkToIndex(idx);
             while(curr != null)
@@ -145,6 +147,12 @@ namespace MyListLibrary
             return arr;
         }
 
+        /*
+            =====================
+            |       SORTING     |
+            |      METHODS      |
+            =====================
+        */
         private void Shuffle(int indexOne, int indexTwo)
         {
             T temp = this[indexOne];
@@ -168,6 +176,40 @@ namespace MyListLibrary
             }
         }
 
+        private Node<T> GetHalfwayPoint()
+        {
+            Node<T> sw = head;
+            Node<T> fw = head.next;
+
+            while(fw != null)
+            {
+                fw = fw.next;
+                if(fw != null)
+                {
+                    fw = fw.next;
+                    sw = sw.next;
+                }
+            }
+            return sw;
+        }
+
+        public void MergeSort()
+        {
+            Node<T> endOf1st = GetHalfwayPoint();
+            Node<T> begOf2nd = endOf1st.next;
+            // Now that two sides have been established, officially split them.
+            endOf1st.next = null;
+            // LHS starts @ head  | RHS starts @ begOf2nd
+
+        }
+
+
+        /*
+            =====================
+            |    ENUMERATION    |
+            |     METHODS       |
+            =====================
+        */
         public IEnumerator<T> GetEnumerator()
         {
             Node<T> curr = head;

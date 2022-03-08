@@ -4,7 +4,8 @@ namespace MyListProgram
 {
     public class Program
     {
-        public static void Main(string[] args)
+
+        private static void MainTest()
         {
             Console.WriteLine("#== MyList Test Program ==#");
             MyList<int> list = new MyList<int>();
@@ -91,6 +92,25 @@ namespace MyListProgram
             {
                 Console.WriteLine(i);
             }
+        }
+
+
+        public static async void WalkerTest()
+        {
+            int arrLength = 9;
+            int[] arr = new int[arrLength];
+            for(int i = 1; i < arrLength + 1; i++)
+            {
+                arr[i - 1] = i;
+            }
+            MyList<int> l = new MyList<int>(arr);
+
+            l.MergeSort();
+        }
+        public static void Main(string[] args)
+        {
+            // MainTest();
+            WalkerTest();
         }
     }
 }
