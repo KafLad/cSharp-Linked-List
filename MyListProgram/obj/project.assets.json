@@ -1,0 +1,88 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "MyListLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MyListLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyListLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MyListLibrary/1.0.0": {
+      "type": "project",
+      "path": "../MyListLibrary/MyListLibrary.csproj",
+      "msbuildProject": "../MyListLibrary/MyListLibrary.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "MyListLibrary >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/ethan/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListProgram/MyListProgram.csproj",
+      "projectName": "MyListProgram",
+      "projectPath": "/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListProgram/MyListProgram.csproj",
+      "packagesPath": "/home/ethan/.nuget/packages/",
+      "outputPath": "/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListProgram/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/ethan/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/MyListLibrary.csproj": {
+              "projectPath": "/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/MyListLibrary.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

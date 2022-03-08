@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MyListProgram/1.0.0": {
+        "dependencies": {
+          "MyListLibrary": "1.0.0"
+        },
+        "runtime": {
+          "MyListProgram.dll": {}
+        }
+      },
+      "MyListLibrary/1.0.0": {
+        "runtime": {
+          "MyListLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MyListProgram/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyListLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

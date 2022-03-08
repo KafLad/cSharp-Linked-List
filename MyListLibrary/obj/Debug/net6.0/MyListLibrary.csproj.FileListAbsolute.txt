@@ -1,0 +1,12 @@
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/bin/Debug/net6.0/MyListLibrary.deps.json
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/bin/Debug/net6.0/MyListLibrary.dll
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/bin/Debug/net6.0/MyListLibrary.pdb
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/MyListLibrary.csproj.AssemblyReference.cache
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/MyListLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/MyListLibrary.AssemblyInfoInputs.cache
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/MyListLibrary.AssemblyInfo.cs
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/MyListLibrary.csproj.CoreCompileInputs.cache
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/MyListLibrary.dll
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/refint/MyListLibrary.dll
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/MyListLibrary.pdb
+/home/ethan/Documents/GitHub/cSharp-Linked-List/MyListLibrary/obj/Debug/net6.0/ref/MyListLibrary.dll
