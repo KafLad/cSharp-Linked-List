@@ -106,6 +106,11 @@ namespace MyListProgram
             MyList<int> l = new MyList<int>(arr);
 
             l.MergeSort();
+
+            foreach(int i in l)
+            {
+                Console.WriteLine($"Data for Node: {i}");
+            }
         }
         public static void Main(string[] args)
         {

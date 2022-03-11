@@ -176,9 +176,9 @@ namespace MyListLibrary
             }
         }
 
-        private Node<T> GetHalfwayPoint()
+        private Node<T> GetHalfwayPoint(Node<T> start)
         {
-            Node<T> sw = head;
+            Node<T> sw = start;
             Node<T> fw = head.next;
 
             while(fw != null)
@@ -193,14 +193,23 @@ namespace MyListLibrary
             return sw;
         }
 
+
+    // EGEGEGEGEGEGEGEGEGEG -- CURRENT FUNCTION THAT YOU'RE WORKING ON
         public void MergeSort()
         {
-            Node<T> endOf1st = GetHalfwayPoint();
+            Node<T> endOf1st = GetHalfwayPoint(head);
             Node<T> begOf2nd = endOf1st.next;
+            Node<T> secondSplitter = tail;
             // Now that two sides have been established, officially split them.
             endOf1st.next = null;
             // LHS starts @ head  | RHS starts @ begOf2nd
 
+            // Split the list into individual chunks
+            while(head.next != null)
+            {
+                endOf1st = GetHalfwayPoint(head);
+                endOf1st.next = null;
+            }
         }
 
 
