@@ -95,21 +95,27 @@ namespace MyListProgram
         }
 
 
-        public static async void WalkerTest()
+        public static void WalkerTest()
         {
-            int arrLength = 9;
-            int[] arr = new int[arrLength];
-            for(int i = 1; i < arrLength + 1; i++)
+            Console.WriteLine("#=== Starting Merge Sort Test ===#\n\n");
+            Random rand = new Random();
+            int[] arr = new int[10];
+
+            for(int i = 1; i < arr.Length; i++)
             {
-                arr[i - 1] = i;
+                arr[i-1] = rand.Next(0, 100);
             }
             MyList<int> l = new MyList<int>(arr);
-
-            l.MergeSort();
+            foreach(int i in l)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("#==== Doing Merge Sort ===#");
+            l.FastSort();
 
             foreach(int i in l)
             {
-                Console.WriteLine($"Data for Node: {i}");
+                Console.WriteLine(i);
             }
         }
         public static void Main(string[] args)

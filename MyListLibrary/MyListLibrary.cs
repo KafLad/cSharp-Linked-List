@@ -49,6 +49,13 @@ namespace MyListLibrary
             }
         }
 
+
+        /*
+            ====================
+            |       LIST       |
+            |    FUNCTIONS     |
+            ====================
+        */
         public void Add(T item) 
         {
             // Function that adds an item to the end of the linked list
@@ -147,6 +154,7 @@ namespace MyListLibrary
             return arr;
         }
 
+
         /*
             =====================
             |       SORTING     |
@@ -176,6 +184,30 @@ namespace MyListLibrary
             }
         }
 
+
+
+        public void FastSort()
+        {
+            Node<T> r = MergeSort(head);
+            head = r;
+        }
+
+        private Node<T> MergeSort(Node<T> h)
+        {
+            if ((h == null) || (h.next == null)) { return h; }
+
+            Node<T> mid = GetHalfwayPoint(h);
+            Node<T> nextToMid = mid.next;
+            mid.next = null;
+
+            Node<T> LHS = MergeSort(h);
+            Node<T> RHS = MergeSort(nextToMid);
+
+            Node<T> sorted = MergeSorting(LHS, RHS);
+            return sorted;
+        }
+
+
         private Node<T> GetHalfwayPoint(Node<T> start)
         {
             Node<T> sw = start;
@@ -193,25 +225,34 @@ namespace MyListLibrary
             return sw;
         }
 
-
-    // EGEGEGEGEGEGEGEGEGEG -- CURRENT FUNCTION THAT YOU'RE WORKING ON
-        public void MergeSort()
+        private Node<T> MergeSorting(Node<T> left, Node<T> right)
         {
-            Node<T> endOf1st = GetHalfwayPoint(head);
-            Node<T> begOf2nd = endOf1st.next;
-            Node<T> secondSplitter = tail;
-            // Now that two sides have been established, officially split them.
-            endOf1st.next = null;
-            // LHS starts @ head  | RHS starts @ begOf2nd
+            Node<T> r = null;
+            if (left == null) { return right; }
+            if (right == null) { return left; }
 
-            // Split the list into individual chunks
-            while(head.next != null)
+            if(left.data.CompareTo(right.data) <= 0)
             {
-                endOf1st = GetHalfwayPoint(head);
-                endOf1st.next = null;
+                r = left;
+                r.next = MergeSorting(left.next, right);
             }
+            /*
+            else if (left.data.CompareTo(right.data) == 0)
+            {
+                r = left;
+                Node<T> nxt = null;
+                nxt = right;
+                r.next = nxt;
+                nxt.next = MergeSorting(left.next.next, right);
+            }
+            */
+            else
+            {
+                r = right;
+                r.next = MergeSorting(left, right.next);
+            }
+            return r;
         }
-
 
         /*
             =====================
@@ -229,17 +270,21 @@ namespace MyListLibrary
             }
         }
 
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
-        
+
+
         public override string ToString()
         {
             string type = head.data.GetType().Name;
             string msg = $"MyList Object type '{type}' | Length: {count}";
             return msg;
         }
+ 
+ 
         public T this[int index]
         {
             get
